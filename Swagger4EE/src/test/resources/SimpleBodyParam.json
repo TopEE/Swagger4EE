@@ -1,0 +1,45 @@
+{
+    "swagger": "2.0",
+    "host": "localhost:8182",
+    "basePath": "/rest",
+    "info": {
+        "title": "Swagger Simple Path Sample",
+        "version": "1.0"
+    },
+    "paths": {
+        "/simplebodyparam/body1": {
+            "post": {
+                "tags": ["SimpleBodyParamResource"],
+                "operationId": "SimpleBodyParamResource.simpleBody1",
+                "produces": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "200"
+                    }
+                },
+                "parameters": [{
+                        "name": "Body1",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Body1"
+                        }
+                    }]
+            }
+        }
+    },
+    "definitions": {
+        "Body1": {
+            "id": "Body1",
+            "properties": {
+                "felt1": {
+                    "type": "string"
+                },
+                "felt2": {
+                    "type": "integer",
+                    "format":"int64"
+                }
+            }
+        }
+    }
+}

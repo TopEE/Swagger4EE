@@ -1,0 +1,30 @@
+{
+  "swagger" : "2.0",
+  "host" : "localhost:8182",
+  "basePath" : "/rest",
+  "info" : {
+    "title" : "Swagger Simple Path Sample",
+    "version" : "1.0"
+  },
+  "paths" : {
+    "/simplequeryparam/astring" : {
+      "get" : {
+        "tags" : [ "SimpleQueryParamResource" ],
+        "operationId" : "SimpleQueryParamResource.simpleString",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200"
+          }
+        },
+        "parameters" : [ {
+          "name" : "value",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        } ]
+      }
+    }
+  },
+  "definitions" : { }
+}

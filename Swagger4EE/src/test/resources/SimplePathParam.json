@@ -1,0 +1,106 @@
+{
+    "swagger": "2.0",
+    "host": "localhost:8182",
+    "basePath": "/rest",
+    "info": {
+        "title": "Swagger Simple Path Sample",
+        "version": "1.0"
+    },
+    "paths": {
+        "/simplepathparam/ainteger/{intValue}/{longValue}": {
+            "get": {
+                "tags": ["SimplePathParamResource"],
+                "operationId": "SimplePathParamResource.simpleInteger",
+                "produces": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "200",
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                },
+                "parameters": [{
+                        "name": "intValue",
+                        "in": "path",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    }, {
+                        "name": "longValue",
+                        "in": "path",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }]
+            }
+        },
+        "/simplepathparam/anumber/{floatValue}/{doubleValue}": {
+            "get": {
+                "tags": ["SimplePathParamResource"],
+                "operationId": "SimplePathParamResource.simpleNumber",
+                "produces": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "200",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Body1"
+                            }
+                        }
+                    }
+                },
+                "parameters": [{
+                        "name": "floatValue",
+                        "in": "path",
+                        "required": true,
+                        "type": "number",
+                        "format": "float"
+                    }, {
+                        "name": "doubleValue",
+                        "in": "path",
+                        "required": true,
+                        "type": "number",
+                        "format": "double"
+                    }]
+            }
+        },
+         "/simplepathparam/astring/{value}": {
+            "get": {
+                "tags": ["SimplePathParamResource"],
+                "operationId": "SimplePathParamResource.simpleString",
+                "produces": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "200",
+                        "schema": {
+                            "$ref": "#/definitions/Body1"
+                        }
+                    }
+                },
+                "parameters": [{
+                        "name": "value",
+                        "in": "path",
+                        "required": true,
+                        "type": "string"
+                    }]
+            }
+        }
+    },
+    "definitions": {
+        "Body1": {
+            "id": "Body1",
+            "properties": {
+                "felt1": {
+                    "type": "string"
+                },
+                "felt2": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        }
+    }
+}
